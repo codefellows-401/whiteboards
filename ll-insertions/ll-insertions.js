@@ -29,13 +29,26 @@ class SingleList {
       current = current.next;
     }
   }
-  // insertBefore(value) {
+  
+  insertBefore(node, value) {
+    let current = this.head.next;
+    while(current.next !== null) {
+      if(current.next.value === node) {
+        let storedNode = current.next;
+        current.next= new Node(node,storedNode);
+      }
+    }
+  }
 
-  // }
-  // insertAfter(value) {
-
-  // }
+  insertAfter(node, value) {
+    let current = this.head.next;
+    while(current.next !== null) {
+      if(current.value === node) {
+        let storedVal = current.next;
+        current.next = new Node(value, storedVal);
+      }
+    }
+  }
 }
-
 
 module.exports = SingleList;
